@@ -1,0 +1,14 @@
+{
+  "name": "expressapi",
+  "version": "1.0.0",
+  "description": "local api to call website api",
+  "main": "index.js",
+  "scripts": {
+    "test": "start"
+  },
+  "author": "Linus Trahair",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
