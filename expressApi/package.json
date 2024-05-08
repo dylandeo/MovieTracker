@@ -4,7 +4,7 @@
   "description": "local api to call website api",
   "main": "index.js",
   "scripts": {
-    "test": "start"
+    "test": "node index.js"
   },
   "author": "Linus Trahair",
   "license": "ISC",
