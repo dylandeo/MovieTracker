@@ -4,17 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie Munchies - Login</title>
+    <link rel="stylesheet" href="login.css">
 </head>
 <body>
-    <div class="container">
-        <form id="loginForm">
-            <h2>Welcome to Movie Munchies!</h2>
-            <h1>Login:</h1>
-            <div class="form-fillout">
-                <label for="username">Enter Username:</label>
-                <input type="text" id="username" name="username" required>
-            </div>
-        </form>
+    <div class="login-container">
+        <h2 id="header">Welcome to Movie Munchies!</h2>
+        <div id="loginFormContainer">
+            <form id="loginForm">
+                <h1>Login:</h1>
+                <div class="form-fillout">
+                    <label for="username">Enter Username:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-fillout">
+                    <label for="password">Enter Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit">Get Rating Now!</button>
+            </form>
+        </div>
     </div>
 </body>
 </html>
