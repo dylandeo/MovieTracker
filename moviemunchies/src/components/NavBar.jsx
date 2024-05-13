@@ -1,15 +1,16 @@
-import React, {useState} from "react";
-
-const NavBar = ({cart, cartCount, toggleCart, addToCart, updateCartCount, handleMenuClick}) => {
-
-  return (~
-    <div id='nav-bar'>
-      <div id='page-nav'>
-        <div onClick={handleMenuClick}>Menu</div>
-        <div onClick={toggleCart}>Cart ({cartCount})</div>
-      </div>
-    </div>
-  )
+export default function NavBar(){
+  return <nav className="nav">
+    <a href="/" className="site-title">Movie Munchies</a>
+    <ul>
+      <CustomLink href="/likes">Likes</CustomLink>
+      <CustomLink href="/watch-later">Watch Later</CustomLink>
+    </ul>
+  </nav>
 }
 
-export default NavBar;
+function CustomLink({href, children, ...props}){
+  const path = window.location.pathname
+  return(
+    <li className={path === href ? "active" : ""}><a href={href}{...props}>{children}</a></li>
+  )
+}

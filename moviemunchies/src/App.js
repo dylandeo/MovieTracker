@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import LikesPage from './components/LikesPage';
+import WatchLaterPage from './components/WatchLaterPage';
+import SearchPage from './components/SearchPage';
+import NavBar from './components/NavBar';
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  let page
+switch(window.location.pathname){
+  case "/":
+    page = <SearchPage />
+    break
+  case "/likes":
+    page = <LikesPage />
+    break 
+  case "/watch-later":
+    page = <WatchLaterPage />
+    break
+}
+
+  return <>
+  <NavBar />
+    <div className="container"> 
+      {page} 
     </div>
-  );
+
+  </>
 }
 
 export default App;
