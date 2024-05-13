@@ -3,29 +3,24 @@ import LikesPage from './components/LikesPage';
 import WatchLaterPage from './components/WatchLaterPage';
 import SearchPage from './components/SearchPage';
 import NavBar from './components/NavBar';
+import { Route, Routes  } from "react-router-dom";
 
 
 function App() {
-  let page
-switch(window.location.pathname){
-  case "/":
-    page = <SearchPage />
-    break
-  case "/likes":
-    page = <LikesPage />
-    break 
-  case "/watch-later":
-    page = <WatchLaterPage />
-    break
-}
 
-  return <>
+  return (
+  <>
   <NavBar />
     <div className="container"> 
-      {page} 
+      <Routes>
+        <Route path="/" element={<SearchPage />}/>
+        <Route path="/likes" element={<LikesPage />}/>
+        <Route path="/watch-later" element={<WatchLaterPage />}/>
+      </Routes>
     </div>
 
   </>
+  )
 }
 
 export default App;
