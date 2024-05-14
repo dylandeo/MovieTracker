@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+import LikesPage from './components/LikesPage';
+import WatchLaterPage from './components/WatchLaterPage';
+import SearchPage from './components/SearchPage';
+import NavBar from './components/NavBar';
+
+import { Route, Routes  } from "react-router-dom";
+
 
 function App() {
+
+  
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  <>
+  <NavBar />
+    <div className="_container"> 
+      <Routes>
+        <Route path="/" element={<SearchPage />}/>
+        <Route path="/likes" element={<LikesPage />}/>
+        <Route path="/watch-later" element={<WatchLaterPage />}/>
+      </Routes>
     </div>
-  );
+
+    
+  </>
+  )
 }
 
 export default App;
