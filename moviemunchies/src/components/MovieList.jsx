@@ -10,7 +10,7 @@ const MovieList = (props) => {
     useEffect(() => {
         const fetchMoviesWithPlot = async () => {
             try {
-                const apiKey = "ac6774f1"; // Replace with your actual API key
+                const apiKey = "ac6774f1";
                 const requests = props.movies.map(movie =>
                     axios.get(`http://www.omdbapi.com/?i=${movie.imdbID}&plot=full&apikey=${apiKey}`)
                 );
