@@ -33,13 +33,13 @@ const SearchPage = ({}) =>
 
     return <div className='container-fluid movie-app'>
     <div className="row d-flex align-items-center">
-        <SearchBar searchValue={searchValue} setSearchValue={setSearchValue}/>
+        {/* <SearchBar searchValue={searchValue} setSearchValue={setSearchValue}/> */}
         </div>
     
     <div className="row">
     <MovieList movies = {movies} handleLikesClick={addToLikes} likesComponent = {AddLikes}/>
     </div>
-      
+
   </div>
 }
 
