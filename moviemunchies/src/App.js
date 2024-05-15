@@ -47,7 +47,7 @@ function App() {
         <div className="_container">
           <Routes>
             <Route path="/" element={<SearchPage searchValue={searchValue} setSearchValue={setSearchValue} movies={movies} handleLikesClick={addToLikes} likesComponent={AddLikes} />} />
-            <Route path="/likes" element={<LikesPage likes={likes} />} />
+            <Route path="/likes" element={<LikesPage likes={likes} likeSet={setLikes} />} />
             <Route path="/watch-later" element={<WatchLaterPage />} />
           </Routes>
         </div>
