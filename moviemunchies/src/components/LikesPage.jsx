@@ -1,7 +1,9 @@
-import React from "react";
-import SearchPage from "./SearchPage";
+import React, { useEffect, useState } from "react";
+
 import MovieList from "./MovieList";
+
 const LikesPage = ({likes}) => {
+    const likesList= likes;
     return (
         <>
         <h1>LIKES PAGE</h1>
@@ -17,6 +19,7 @@ const LikesPage = ({likes}) => {
                         <h2>{movie.Title}</h2>
                         <p>{movie.Year}</p>
                         <p>{movie.Type.toUpperCase()}</p>
+                        <p>{movie.Plot}</p>
                     </div>
                     
                 </div>

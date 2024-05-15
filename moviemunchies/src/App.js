@@ -3,12 +3,13 @@ import { Routes, Route } from 'react-router-dom';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import LikesPage from './components/LikesPage';
+import MovieList from './components/MovieList';
 import WatchLaterPage from './components/WatchLaterPage';
 import SearchPage from './components/SearchPage';
 import NavBar from './components/NavBar';
 import SearchBar from './components/SearchBar';
 import AddLikes from './components/AddLikes';
-import MovieList from './components/MovieList';
+
 
 function App() {
   const [movies, setMovies] = useState([]);
@@ -51,6 +52,8 @@ function App() {
         <div className="row">
           <MovieList movies={movies} handleLikesClick={addToLikes} likesComponent={AddLikes} />
         </div>
+
+        
       </div>
     </>
   );
