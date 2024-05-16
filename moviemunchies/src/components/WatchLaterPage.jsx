@@ -3,7 +3,17 @@ import MovieList from './MovieList';
 import RemoveWatchLater from './RemoveWatchLater'; 
 
 
-const WatchLaterPage = ({ watchLater, removeFromWatchLater }) => {
+const WatchLaterPage = ({ watchLater, removeFromWatchLater,watchFunction }) => {
+    const removeWatchLater=(id)=>{
+        let list=[];
+        for(var i=0;i<watchLater.length;i++){
+            if(watchLater[i].imdbID===id){}
+            else{
+                list.push(watchLater[i]);
+            }
+        }
+        watchFunction(list);
+    }
     return (
         <>
             <h1>WATCH LATER PAGE</h1>
@@ -24,7 +34,7 @@ const WatchLaterPage = ({ watchLater, removeFromWatchLater }) => {
                                     <p>{movie.Plot}</p>
                                 </div>
                                 {}
-                                <div onClick={() => removeFromWatchLater(movie.imdbID)} className="overlay d-flex align-items-center justify-content-center">
+                                <div onClick={() => removeWatchLater(movie.imdbID)} className="overlay d-flex align-items-center justify-content-center">
                                     <RemoveWatchLater />
                                 </div>
                             </div>

@@ -67,7 +67,7 @@ function App() {
                             }
                         />
                         <Route path="/likes" element={<LikesPage likes={likes} likeSet={setLikes} />} />
-                        <Route path="/watch-later" element={<WatchLaterPage watchLater={watchLater} currentRoute={location.pathname} />} />
+                        <Route path="/watch-later" element={<WatchLaterPage watchLater={watchLater} watchFunction={setWatchLater} currentRoute={location.pathname} />} />
                     </Routes>
                 </div>
             </div>
