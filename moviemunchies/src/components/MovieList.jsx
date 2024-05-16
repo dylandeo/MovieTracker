@@ -1,24 +1,26 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import AddLikes from "./AddLikes";
-import SearchPage from "./SearchPage";
+// MovieList.jsx
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import AddLikes from './AddLikes';
+import AddToWatchLater from './AddWatchLater'; // Import AddToWatchLater component
+import { useLocation } from 'react-router-dom'; // Import useLocation hook
 
 const MovieList = (props) => {
-    const LikesComponent = props.likesComponent;
     const [moviesWithPlot, setMoviesWithPlot] = useState([]);
+    const location = useLocation(); // Get current route location
 
     useEffect(() => {
         const fetchMoviesWithPlot = async () => {
             try {
-                const apiKey = "ac6774f1";
-                const requests = props.movies.map(movie =>
+                const apiKey = 'ac6774f1';
+                const requests = props.movies.map((movie) =>
                     axios.get(`http://www.omdbapi.com/?i=${movie.imdbID}&plot=full&apikey=${apiKey}`)
                 );
                 const responses = await Promise.all(requests);
-                const moviesWithPlotData = responses.map(response => response.data);
+                const moviesWithPlotData = responses.map((response) => response.data);
                 setMoviesWithPlot(moviesWithPlotData);
             } catch (error) {
-                console.error("Error fetching movies with plot:", error);
+                console.error('Error fetching movies with plot:', error);
             }
         };
 
@@ -36,13 +38,22 @@ const MovieList = (props) => {
                         <p>{movie.Type.toUpperCase()}</p>
                         <p>{movie.Plot}</p>
                     </div>
-                    <div onClick={() => props.handleLikesClick(movie)} className="overlay d-flex align-items-center justify-content-center">
-                        <LikesComponent />
+                    <div className="overlay d-flex align-items-center justify-content-center">
+                        {location.pathname !== '/watch-later' && ( // Conditionally render AddLikes component
+                            <div onClick={() => props.handleLikesClick(movie)}>
+                                <AddLikes />
+                            </div>
+                        )}
+                        {location.pathname !== '/watch-later' && ( // Conditionally render AddToWatchLater component
+                            <div onClick={() => props.handleWatchLaterClick(movie)} style={{ marginLeft: '10px' }}>
+                                <AddToWatchLater />
+                            </div>
+                        )}
                     </div>
                 </div>
             ))}
         </>
     );
-}
+};
 
 export default MovieList;
