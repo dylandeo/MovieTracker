@@ -34,6 +34,7 @@ const LikesPage = ({likes,likeSet}) => {
                     <div className="d-flex flex-column align-items-start">
                         <h2>{movie.Title}</h2>
                         <p>{movie.Year}</p>
+                        <p>{movie.Genre}</p>
                         <p>{movie.Type.toUpperCase()}</p>
                         <p>{movie.Plot}</p>
                     </div>
