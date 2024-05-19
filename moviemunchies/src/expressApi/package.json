@@ -3,12 +3,18 @@
   "version": "1.0.0",
   "description": "local api to call website api",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "node index.js"
+    "test": "node server.js"
   },
   "author": "Linus Trahair",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.19.2"
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "mongoose": "^8.4.0",
+    "node-fetch": "^3.3.2",
+    "nodemon": "^3.1.0"
   }
 }
+
