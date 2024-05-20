@@ -44,9 +44,10 @@ body{
 
 }
 
-.nav li.active
-{
-    background-color: rgb(221, 199, 3) ;
+.nav li.active {
+    background-color: #A33939; 
+    padding: 0.5rem 1rem;
+    border-radius: 4px; 
 }
 
 .nav li:hover
