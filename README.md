@@ -1,6 +1,6 @@
 # Movie Munchies
 <p align="center">
-  <div align="center">
+  <div>
     Created by Dylan Deokinandan, Fayyaad Hassan, Sumaiya Hossain, Ronald Forte Jr, Thommy Bou, Linus Trahair
   </div>
 </p>
